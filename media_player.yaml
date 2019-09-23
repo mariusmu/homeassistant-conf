@@ -1,0 +1,7 @@
+- platform: webostv
+  host: !secret tv_ip
+  name: 'TV i stua'
+  turn_on_action:
+    service: wake_on_lan.send_magic_packet
+    data:
+      mac: "7c:1c:4e:a1:2e:07"

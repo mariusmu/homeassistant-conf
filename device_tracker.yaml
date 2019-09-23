@@ -1,0 +1,9 @@
+- platform: ping
+  count: 5
+  hosts:
+    tracker_sunniva: !secret device_ip_sunniva
+
+- platform: ping
+  count: 5
+  hosts:
+    tracker_marius: !secret device_ip_marius

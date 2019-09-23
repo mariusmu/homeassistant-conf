@@ -1,0 +1,14 @@
+- id: '1566566602280'
+  alias: 'Ny automatisering'
+  trigger:
+  - entity_id: lock.id_lock_as_150_locked
+    from: "locked"
+    platform: state
+    to: "unlocked"
+  condition: []
+  action:
+  - data:
+      message: "Door was unlocked"
+      notification_id: zwave
+      title: "Front door"
+    service: persistent_notification.create

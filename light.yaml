@@ -1,0 +1,7 @@
+- platform: group
+  name: Lys i gang
+  entities:
+    - light.dimmable_light_1
+    - light.dimmable_light_2
+    - light.dimmable_light_3
+    - light.dimmable_light_4

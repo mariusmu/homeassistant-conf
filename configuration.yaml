@@ -1,0 +1,52 @@
+homeassistant:
+  latitude: !secret lat 
+  longitude: !secret long 
+  elevation: 183
+  unit_system: metric
+  time_zone: Europe/Oslo
+  customize: !include customize.yaml
+  auth_providers:
+   - type: homeassistant
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+sensor: !include sensor.yaml
+light: !include light.yaml
+device_tracker: !include device_tracker.yaml
+media_player: !include media_player.yaml
+http:
+  server_port: 8123
+  ip_ban_enabled: true
+  login_attempts_threshold: 5
+  cors_allowed_origins:
+    - https://google.com
+    - https://www.home-assistant.io
+  
+config:
+cloud:
+system_health:
+discovery:
+frontend:
+sun:
+zwave:
+  usb_path: /dev/ttyACM0
+  network_key: !secret zwave_network_key
+  polling_interval: 75000000
+  device_config: !include zwave_device_config.yaml
+logbook:
+  include:
+    domains:
+      - sensor
+      - switch
+      - lock
+map:
+person:
+  - name: Marius
+    id: ma_01
+  - name: Sunniva
+    id: su_01
+    device_trackers:
+      - device_tracker.tracker_sunniva
+updater:
+zeroconf:

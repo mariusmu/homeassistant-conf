@@ -1,0 +1,5 @@
+device_tracker.tracker_marius:
+  friendly_name: Marius
+
+device_tracker.tracker_sunniva:
+  friendly_name: Sunniva
