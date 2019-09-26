@@ -1,49 +1,49 @@
- - platform: template
-   sensors:
-     bedroom_window_1_sensor:
-       friendly_name: 'Soveromsvindu (venstre)'
-       entity_id: binary_sensor.bedroom_window_1
-       value_template: >-
-         {% if is_state("binary_sensor.bedroom_window_1", "on") %}
-           Åpen
-         {% elif is_state("binary_sensor.bedroom_window_1", "off") %}
-           Lukket
-         {% else %}
-            Ukjent
-          {% endif %}
-
- - platform: template
-   sensors:
-     roof_window_sensor:
-       friendly_name: 'Takvindu'
-       entity_id: binary_sensor.roof_window
-       value_template: >-
-         {% if is_state("binary_sensor.roof_window", "on")  %}
-           Åpen
-         {% elif is_state("binary_sensor.roof_window", "off") %}
-           Lukket
-         {% else %}
-           Ukjent
-         {% endif %}
-
- - platform: template
-   sensors:
-     battery_lock_sensor:
-       friendly_name: 'Batteri lås'
-       value_template: '{{ states.zwave.id_lock_as_150.attributes.battery_level }}'
-       unit_of_measurement: '%'
-
- - platform: template
-   sensors:
-     battery_bedroom_window_1_sensor:
-       friendly_name: 'Batteri vindu soverom (venstre)'
-       value_template: '{{ states.zwave.bedroom_window_1.attributes.battery_level }}'
-       unit_of_measurement: '%'
-
- - platform: template
-   sensors:
-     battery_roof_window_sensor:
-       friendly_name: 'Batteri vindu soverom (venstre)'
-       value_template: '{{ states.zwave.roof_window.attributes.battery_level }}'
-       unit_of_measurement: '%'
-      
+# - platform: template
+#   sensors:
+#     bedroom_window_1_sensor:
+#       friendly_name: 'Soveromsvindu (venstre)'
+#       entity_id: binary_sensor.bedroom_window_1
+#       value_template: >-
+#         {% if is_state("binary_sensor.bedroom_window_1", "on") %}
+#           Åpen
+#        {% elif is_state("binary_sensor.bedroom_window_1", "off") %}
+#           Lukket
+#         {% else %}
+#            Ukjent
+#          {% endif %}
+#
+# - platform: template
+#   sensors:
+#     roof_window_sensor:
+#       friendly_name: 'Takvindu'
+#       entity_id: binary_sensor.roof_window
+#       value_template: >-
+#         {% if is_state("binary_sensor.roof_window", "on")  %}
+#           Åpen
+#         {% elif is_state("binary_sensor.roof_window", "off") %}
+#           Lukket
+#         {% else %}
+#           Ukjent
+#         {% endif %}
+#
+# - platform: template
+#   sensors:
+#     battery_lock_sensor:
+#       friendly_name: 'Batteri lås'
+#       value_template: '{{ states.zwave.id_lock_as_150.attributes.battery_level }}'
+#       unit_of_measurement: '%'
+#
+# - platform: template
+#   sensors:
+#     battery_bedroom_window_1_sensor:
+#       friendly_name: 'Batteri vindu soverom (venstre)'
+#       value_template: '{{ states.zwave.bedroom_window_1.attributes.battery_level }}'
+#       unit_of_measurement: '%'
+#
+# - platform: template
+#   sensors:
+#     battery_roof_window_sensor:
+#       friendly_name: 'Batteri vindu soverom (venstre)'
+#       value_template: '{{ states.zwave.roof_window.attributes.battery_level }}'
+#       unit_of_measurement: '%'
+#      

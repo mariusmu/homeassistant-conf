@@ -17,14 +17,13 @@ device_tracker: !include device_tracker.yaml
 media_player: !include media_player.yaml
 http:
   server_port: 8123
-  ip_ban_enabled: true
-  login_attempts_threshold: 5
+  ip_ban_enabled: false
+ # login_attempts_threshold: 5
   cors_allowed_origins:
     - https://google.com
     - https://www.home-assistant.io
   
 config:
-cloud:
 system_health:
 discovery:
 frontend:
@@ -34,6 +33,14 @@ zwave:
   network_key: !secret zwave_network_key
   polling_interval: 75000000
   device_config: !include zwave_device_config.yaml
+recorder:
+  purge_keep_days: 31
+  db_url: !secret mysql_connection_string
+  include:
+    domains:
+      - sensor
+      - switch
+      - lock
 logbook:
   include:
     domains:
